@@ -1,0 +1,4 @@
+# Игнорируем папку .idea и файлы practice1.doc practice1.iml в папке practice1.
+practice1/.idea
+practice1/practice1.doc
+practice1/practice1.iml
