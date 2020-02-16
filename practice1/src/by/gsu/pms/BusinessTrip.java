@@ -1,15 +1,16 @@
 package by.gsu.pms;
 
 public class BusinessTrip {
-    final double DAILY_RATE = 25000;
-    String account;
-    double expenses;
-    int numberOfDays;
+    private final double DAILY_RATE = 25000;
+    private String account;
+    private double expenses;
+    private int daysInTrip;
 
-    public BusinessTrip(String _account, double _expenses, int _numberOfDays) {
-        account         = _account;
-        expenses        = _expenses;
-        numberOfDays    = _numberOfDays;
+    public BusinessTrip() {}
+    public BusinessTrip(String account, double expenses, int numberOfDays) {
+        this.account         = account;
+        this.expenses        = expenses;
+        this.daysInTrip      = numberOfDays;
     }
 
     public String getAccount() {
@@ -20,8 +21,8 @@ public class BusinessTrip {
         return expenses;
     }
 
-    public int getNumberOfDays() {
-        return numberOfDays;
+    public int getDaysInTrip() {
+        return daysInTrip;
     }
 
     public void setAccount(String account) {
@@ -32,34 +33,32 @@ public class BusinessTrip {
         this.expenses = expenses;
     }
 
-    public void setNumberOfDays(int numberOfDays) {
-        this.numberOfDays = numberOfDays;
+    public void setDaysInTrip(int daysInTrip) {
+        this.daysInTrip = daysInTrip;
     }
 
     public double getTotal() {
-        if (numberOfDays == 1) {
+        if (daysInTrip == 1) {
             return expenses;
-        } else if (numberOfDays > 1) {
-            return numberOfDays * DAILY_RATE + expenses;
+        } else if (daysInTrip > 1) {
+            return daysInTrip * DAILY_RATE + expenses;
         } else {
-            System.out.println("Вы указали недопустимое количество дней!");
             return 0.0;
         }
     }
 
     public void show() {
-        System.out.printf("rate = %f\n" +
+        System.out.printf("rate = %.2f\n" +
                              "name = %s\n" +
-                             "transport =%f\n" +
+                             "transport = %.2f\n" +
                              "days = %d\n" +
-                             "total =%f\n\n",
-                             DAILY_RATE, account, expenses, numberOfDays, this.getTotal());
+                             "total = %.2f\n\n",
+                             DAILY_RATE, account, expenses, daysInTrip, this.getTotal());
     }
 
     @Override
-    public void toString() {
-        System.out.println();
+    public String toString() {
+        return DAILY_RATE + ";" + account + ";" + expenses + ";" + daysInTrip + ";" + this.getTotal();
     }
-
 }
 
