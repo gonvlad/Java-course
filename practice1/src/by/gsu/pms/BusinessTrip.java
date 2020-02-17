@@ -1,13 +1,14 @@
 package by.gsu.pms;
+import by.gsu.pms.Converter;
 
 public class BusinessTrip {
     private final double DAILY_RATE = 25000;
     private String account;
-    private double expenses;
+    private int expenses;
     private int daysInTrip;
 
     public BusinessTrip() {}
-    public BusinessTrip(String account, double expenses, int numberOfDays) {
+    public BusinessTrip(String account, int expenses, int numberOfDays) {
         this.account         = account;
         this.expenses        = expenses;
         this.daysInTrip      = numberOfDays;
@@ -29,7 +30,7 @@ public class BusinessTrip {
         this.account = account;
     }
 
-    public void setExpenses(double expenses) {
+    public void setExpenses(int expenses) {
         this.expenses = expenses;
     }
 
@@ -50,7 +51,7 @@ public class BusinessTrip {
     public void show() {
         System.out.printf("rate = %.2f\n" +
                              "name = %s\n" +
-                             "transport = %.2f\n" +
+                             "transport = %d\n" +
                              "days = %d\n" +
                              "total = %.2f\n\n",
                              DAILY_RATE, account, expenses, daysInTrip, this.getTotal());
@@ -58,7 +59,7 @@ public class BusinessTrip {
 
     @Override
     public String toString() {
-        return DAILY_RATE + ";" + account + ";" + expenses + ";" + daysInTrip + ";" + this.getTotal();
+        return DAILY_RATE + ";" + account + ";" + Converter.convert((double) expenses, 10000, 2) + ";" + daysInTrip + ";" + Converter.convert(this.getTotal(), 10000, 2);
     }
 }
 
