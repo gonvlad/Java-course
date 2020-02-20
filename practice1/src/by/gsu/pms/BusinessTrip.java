@@ -2,12 +2,13 @@ package by.gsu.pms;
 import by.gsu.pms.Converter;
 
 public class BusinessTrip {
-    public final double DAILY_RATE = 25000;
+    public final int DAILY_RATE = 25000;
     private String account;
     private int expenses;
     private int daysInTrip;
 
     public BusinessTrip() {}
+
     public BusinessTrip(String account, int expenses, int numberOfDays) {
         this.account         = account;
         this.expenses        = expenses;
@@ -18,7 +19,7 @@ public class BusinessTrip {
         return account;
     }
 
-    public double getExpenses() {
+    public int getExpenses() {
         return expenses;
     }
 
@@ -38,22 +39,22 @@ public class BusinessTrip {
         this.daysInTrip = daysInTrip;
     }
 
-    public double getTotal() {
+    public int getTotal() {
         if (daysInTrip == 1) {
             return expenses;
         } else if (daysInTrip > 1) {
             return daysInTrip * DAILY_RATE + expenses;
         } else {
-            return 0.0;
+            return 0;
         }
     }
 
     public void show() {
-        System.out.printf("rate = %.2f\n" +
+        System.out.printf("rate = %d\n" +
                              "name = %s\n" +
                              "transport = %d\n" +
                              "days = %d\n" +
-                             "total = %.2f\n\n",
+                             "total = %d\n\n",
                              DAILY_RATE, account, expenses, daysInTrip, this.getTotal());
     }
 
