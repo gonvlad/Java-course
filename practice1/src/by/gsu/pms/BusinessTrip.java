@@ -2,7 +2,7 @@ package by.gsu.pms;
 import by.gsu.pms.Converter;
 
 public class BusinessTrip {
-    private final double DAILY_RATE = 25000;
+    public final double DAILY_RATE = 25000;
     private String account;
     private int expenses;
     private int daysInTrip;
