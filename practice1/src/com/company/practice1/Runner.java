@@ -25,7 +25,7 @@ public class Runner {
         for (int i = 0; i < businessTrips.length; ++i)
             if (i != 2) System.out.println(businessTrips[i].toString());
 
-        System.out.printf("\nTotal expenses sum is: %.2f\n\n", businessTrips[0].getTotal() +
+        System.out.printf("\nTotal expenses sum is: %d\n\n", businessTrips[0].getTotal() +
                                                                businessTrips[1].getTotal() +
                                                                businessTrips[3].getTotal() +
                                                                businessTrips[4].getTotal() +
