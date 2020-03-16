@@ -24,14 +24,14 @@ public class Runner {
         System.out.println();
 
         for (int i = 0; i < products.length; ++i) {
-            System.out.println(products[i].toString());
+            System.out.println(products[i]);
         }
 
         Arrays.sort(products, Product.ProductNameComparator);
         System.out.println();
 
         for (int i = 0; i < products.length; ++i) {
-            System.out.println(products[i].toString());
+            System.out.println(products[i]);
         }
 
         double totalCost = 0.0;
