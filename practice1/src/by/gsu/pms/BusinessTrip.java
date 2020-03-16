@@ -60,7 +60,8 @@ public class BusinessTrip {
 
     @Override
     public String toString() {
-        return DAILY_RATE + ";" + account + ";" + Converter.convert((double) expenses, 10000, 2) + ";" + daysInTrip + ";" + Converter.convert(this.getTotal(), 10000, 2);
+        return DAILY_RATE + ";" + account + ";" + Converter.convert((double) expenses, 10000, 2) + ";" +
+                daysInTrip + ";" + Converter.convert(this.getTotal(), 10000, 2);
     }
 }
 
