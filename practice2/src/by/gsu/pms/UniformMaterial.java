@@ -1,15 +1,12 @@
 package by.gsu.pms;
 
-public enum UniformMaterial {
-    COPPER ("copper", 8596),
-    STEEL ("steel", 7850);
-
+public class UniformMaterial {
     private String name;
     private int density;
 
     UniformMaterial() {}
 
-    UniformMaterial(String name, int density) {
+    public UniformMaterial(String name, int density) {
         this.name = name;
         this.density = density;
     }

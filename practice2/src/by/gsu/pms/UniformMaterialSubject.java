@@ -5,23 +5,18 @@ import java.awt.*;
 public class UniformMaterialSubject {
     private UniformMaterial uniformMaterial;
     private String subjectName;
-    private String subjectMaterial;
     private double subjectVolume;
 
     public UniformMaterialSubject() {}
 
-    public UniformMaterialSubject(String subjectName, String subjectMaterial, double subjectVolume) {
+    public UniformMaterialSubject(String subjectName, UniformMaterial uniformMaterial, double subjectVolume) {
         this.subjectName = subjectName;
-        this.subjectMaterial = subjectMaterial;
         this.subjectVolume = subjectVolume;
+        this.uniformMaterial = uniformMaterial;
     }
 
     public String getSubjectName() {
         return subjectName;
-    }
-
-    public String getSubjectMaterial() {
-        return subjectMaterial;
     }
 
     public double getSubjectVolume() {
@@ -34,10 +29,6 @@ public class UniformMaterialSubject {
 
     public void setSubjectName(String subjectName) {
         this.subjectName = subjectName;
-    }
-
-    public void setSubjectMaterial(String subjectMaterial) {
-        this.subjectMaterial = subjectMaterial;
     }
 
     public void setSubjectVolume(double subjectVolume) {
