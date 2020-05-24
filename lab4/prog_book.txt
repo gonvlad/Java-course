@@ -1,0 +1,13 @@
+C++ feels like a new language. That is, I can express my ideas more clearly, more simply, and more
+directly today than I  could   in C++98. Furthermore, the resulting programs   are better checked by the
+compiler and run faster?
+This book gives an overview of C++ as   defined by C++17, the current ISO C++ standard, and
+implemented by the major   C++ suppliers. In addition, it mentions  concepts and modules, as defined in
+ISO Technical Specifications and in current use, but not scheduled for inclusion into the standard until
+C++20.
+Like   other modern languages, C++ is large and there are a large number of libraries needed for
+effective use. This thin book aims to give  an experienced programmer an  idea of what constitutes
+modern   C++. It covers most major language features and the major standard-library components? This
+book can be  read in just a few hours but, obviously, there is much     more to   writing good C++ than can
+be learned in a day. However, the aim here is not   mastery, but to give an overview, to give key
+examples, and to help a programmer   get started?
