@@ -1,0 +1,61 @@
+
+List of applicants with unsatisfactory grades:
+ID: 3
+Surname: Sidorov
+Name: Mihail
+Patronymic: Romanovich
+Address: prl. Ostrovskogo 12/53
+Mobile phone number: +375-44-234-56-71
+Abiturient marks: [8, 3, 7]
+List of applicants whose total score is higher than passing score:
+ID: 2
+Surname: Ivanova
+Name: Elena
+Patronymic: Alexandrovna
+Address: pr. Oktyabria 45/78
+Mobile phone number: +375-25-292-41-80
+Abiturient marks: [8, 7, 9]
+ID: 4
+Surname: Sokolova
+Name: Irina
+Patronymic: Petrovna
+Address: st. Novosibirskaya 12/56
+Mobile phone number: +375-44-718-54-29
+Abiturient marks: [8, 6, 7]
+List of 2 top-rated abiturients: 
+ID: 2
+Surname: Ivanova
+Name: Elena
+Patronymic: Alexandrovna
+Address: pr. Oktyabria 45/78
+Mobile phone number: +375-25-292-41-80
+Abiturient marks: [8, 7, 9]
+ID: 4
+Surname: Sokolova
+Name: Irina
+Patronymic: Petrovna
+Address: st. Novosibirskaya 12/56
+Mobile phone number: +375-44-718-54-29
+Abiturient marks: [8, 6, 7]
+List of applicants whose total score is higher than semi-pass grade:
+ID: 2
+Surname: Ivanova
+Name: Elena
+Patronymic: Alexandrovna
+Address: pr. Oktyabria 45/78
+Mobile phone number: +375-25-292-41-80
+Abiturient marks: [8, 7, 9]
+ID: 4
+Surname: Sokolova
+Name: Irina
+Patronymic: Petrovna
+Address: st. Novosibirskaya 12/56
+Mobile phone number: +375-44-718-54-29
+Abiturient marks: [8, 6, 7]
+ID: 3
+Surname: Sidorov
+Name: Mihail
+Patronymic: Romanovich
+Address: prl. Ostrovskogo 12/53
+Mobile phone number: +375-44-234-56-71
+Abiturient marks: [8, 3, 7]

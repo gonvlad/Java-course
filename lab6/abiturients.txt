@@ -1,0 +1,4 @@
+1 Petrov Sergey Valerievich st. Groznaya 23/46 +375-29-368-23-12 5 4 4
+2 Ivanova Elena Alexandrovna pr. Oktyabria 45/78 +375-25-292-41-80 8 7 9
+3 Sidorov Mihail Romanovich prl. Ostrovskogo 12/53 +375-44-234-56-71 8 3 7
+4 Sokolova Irina Petrovna st. Novosibirskaya 12/56 +375-44-718-54-29 8 6 7
