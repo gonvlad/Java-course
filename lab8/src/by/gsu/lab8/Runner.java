@@ -24,7 +24,7 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 public class Runner {
-    public static final String url = "https://belgazprombank.by/upload/courses.xml";
+    public static final String URL = "https://belgazprombank.by/upload/courses.xml";
     private static ArrayList<Bank> banks = new ArrayList<>();
 
     public static void main(String[] args) throws IOException, SAXException, ParserConfigurationException {
@@ -39,14 +39,14 @@ public class Runner {
             switch (userMenuChoice) {
                 case 1:
                     System.out.println(">>> Starting DOM parsing...");
-                    banks = DOMParser(url);
+                    banks = domParser(URL);
                     System.out.println(">>> Showing result...");
                     showResult(banks);
                     System.out.println("\n>>> DOM parsing ended.");
                     break;
                 case 2:
                     System.out.println(">>> Starting SAX parsing...");
-                    SAXParser();
+                    saxParser();
                     System.out.println(">>> Showing result...");
                     showResult(banks);
                     System.out.println("\n>>> SAX parsing ended.");
@@ -71,7 +71,7 @@ public class Runner {
                 System.out.println(currency.getCurrencyName() + " (" + currency.getNumberOfUnits() + " Unit(s)):");
 
                 for (AmountRange amountRange: currency.getAmountRanges()) {
-                    System.out.printf("\tAmount range: %-6d - %-15d buy price: %.3f BYN | sell price: %.3f BYN\n",
+                    System.out.printf("\tAmount range: %-6d - %-15d buy price: %.3f BYN | sell price: %.3f BYN%n",
                             amountRange.getMinAmount(),
                             amountRange.getMaxAmount(),
                             amountRange.getBuyPrice(),
@@ -81,7 +81,7 @@ public class Runner {
         }
     }
 
-    public static ArrayList<Bank> DOMParser(String url) throws ParserConfigurationException, IOException, SAXException {
+    public static ArrayList<Bank> domParser(String url) throws ParserConfigurationException, IOException, SAXException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document document = builder.parse(url);
@@ -129,7 +129,7 @@ public class Runner {
         return banks;
     }
 
-    public static void SAXParser() throws ParserConfigurationException, SAXException, IOException {
+    public static void saxParser() throws ParserConfigurationException, SAXException, IOException {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser parser = factory.newSAXParser();
 
