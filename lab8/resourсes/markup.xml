@@ -1,0 +1,398 @@
+<branches>
+    <branch name="Головной банк">
+        <rate currency="usd" Units="1">
+            <range min-amount="0" max-amount="99">
+                <buy>2.552</buy>
+                <sell>2.593</sell>
+            </range>
+            <range min-amount="100" max-amount="9999">
+                <buy>2.553</buy>
+                <sell>2.592</sell>
+            </range>
+            <range min-amount="10000" max-amount="999999999999998">
+                <buy>2.554</buy>
+                <sell>2.591</sell>
+            </range>
+        </rate>
+        <rate currency="eur" Units="1">
+            <range min-amount="0" max-amount="99">
+                <buy>3.017</buy>
+                <sell>3.053</sell>
+            </range>
+            <range min-amount="100" max-amount="9999">
+                <buy>3.018</buy>
+                <sell>3.052</sell>
+            </range>
+            <range min-amount="10000" max-amount="999999999999998">
+                <buy>3.019</buy>
+                <sell>3.051</sell>
+            </range>
+        </rate>
+        <rate currency="rub" Units="100">
+            <range min-amount="0" max-amount="9999">
+                <buy>3.29</buy>
+                <sell>3.363</sell>
+            </range>
+            <range min-amount="10000" max-amount="599999">
+                <buy>3.291</buy>
+                <sell>3.362</sell>
+            </range>
+            <range min-amount="600000" max-amount="999999999999998">
+                <buy>3.292</buy>
+                <sell>3.361</sell>
+            </range>
+        </rate>
+    </branch>
+    <branch name="Приходно-расходные кассы (г. Минск)">
+        <rate currency="usd" Units="1">
+            <range min-amount="0" max-amount="99">
+                <buy>2.552</buy>
+                <sell>2.593</sell>
+            </range>
+            <range min-amount="100" max-amount="9999">
+                <buy>2.553</buy>
+                <sell>2.592</sell>
+            </range>
+            <range min-amount="10000" max-amount="999999999999998">
+                <buy>2.554</buy>
+                <sell>2.591</sell>
+            </range>
+        </rate>
+        <rate currency="eur" Units="1">
+            <range min-amount="0" max-amount="99">
+                <buy>3.017</buy>
+                <sell>3.053</sell>
+            </range>
+            <range min-amount="100" max-amount="9999">
+                <buy>3.018</buy>
+                <sell>3.052</sell>
+            </range>
+            <range min-amount="10000" max-amount="999999999999998">
+                <buy>3.019</buy>
+                <sell>3.051</sell>
+            </range>
+        </rate>
+        <rate currency="rub" Units="100">
+            <range min-amount="0" max-amount="9999">
+                <buy>3.29</buy>
+                <sell>3.363</sell>
+            </range>
+            <range min-amount="10000" max-amount="599999">
+                <buy>3.291</buy>
+                <sell>3.362</sell>
+            </range>
+            <range min-amount="600000" max-amount="999999999999998">
+                <buy>3.292</buy>
+                <sell>3.361</sell>
+            </range>
+        </rate>
+    </branch>
+    <branch name="ЦБУ 701-705 (Минск)">
+        <rate currency="usd" Units="1">
+            <range min-amount="0" max-amount="99">
+                <buy>2.552</buy>
+                <sell>2.593</sell>
+            </range>
+            <range min-amount="100" max-amount="9999">
+                <buy>2.553</buy>
+                <sell>2.592</sell>
+            </range>
+            <range min-amount="10000" max-amount="999999999999998">
+                <buy>2.554</buy>
+                <sell>2.591</sell>
+            </range>
+        </rate>
+        <rate currency="eur" Units="1">
+            <range min-amount="0" max-amount="99">
+                <buy>3.017</buy>
+                <sell>3.053</sell>
+            </range>
+            <range min-amount="100" max-amount="9999">
+                <buy>3.018</buy>
+                <sell>3.052</sell>
+            </range>
+            <range min-amount="10000" max-amount="999999999999998">
+                <buy>3.019</buy>
+                <sell>3.051</sell>
+            </range>
+        </rate>
+        <rate currency="rub" Units="100">
+            <range min-amount="0" max-amount="9999">
+                <buy>3.29</buy>
+                <sell>3.363</sell>
+            </range>
+            <range min-amount="10000" max-amount="599999">
+                <buy>3.291</buy>
+                <sell>3.362</sell>
+            </range>
+            <range min-amount="600000" max-amount="999999999999998">
+                <buy>3.292</buy>
+                <sell>3.361</sell>
+            </range>
+        </rate>
+    </branch>
+    <branch name="Минская областная дирекция">
+        <rate currency="usd" Units="1">
+            <range min-amount="0" max-amount="99">
+                <buy>2.552</buy>
+                <sell>2.593</sell>
+            </range>
+            <range min-amount="100" max-amount="9999">
+                <buy>2.553</buy>
+                <sell>2.592</sell>
+            </range>
+            <range min-amount="10000" max-amount="999999999999998">
+                <buy>2.554</buy>
+                <sell>2.591</sell>
+            </range>
+        </rate>
+        <rate currency="eur" Units="1">
+            <range min-amount="0" max-amount="99">
+                <buy>3.017</buy>
+                <sell>3.053</sell>
+            </range>
+            <range min-amount="100" max-amount="9999">
+                <buy>3.018</buy>
+                <sell>3.052</sell>
+            </range>
+            <range min-amount="10000" max-amount="999999999999998">
+                <buy>3.019</buy>
+                <sell>3.051</sell>
+            </range>
+        </rate>
+        <rate currency="rub" Units="100">
+            <range min-amount="0" max-amount="9999">
+                <buy>3.29</buy>
+                <sell>3.363</sell>
+            </range>
+            <range min-amount="10000" max-amount="599999">
+                <buy>3.291</buy>
+                <sell>3.362</sell>
+            </range>
+            <range min-amount="600000" max-amount="999999999999998">
+                <buy>3.292</buy>
+                <sell>3.361</sell>
+            </range>
+        </rate>
+    </branch>
+    <branch name="Брестская областная дирекция">
+        <rate currency="usd" Units="1">
+            <range min-amount="0" max-amount="99">
+                <buy>2.552</buy>
+                <sell>2.593</sell>
+            </range>
+            <range min-amount="100" max-amount="9999">
+                <buy>2.553</buy>
+                <sell>2.592</sell>
+            </range>
+            <range min-amount="10000" max-amount="999999999999998">
+                <buy>2.554</buy>
+                <sell>2.591</sell>
+            </range>
+        </rate>
+        <rate currency="eur" Units="1">
+            <range min-amount="0" max-amount="99">
+                <buy>3.017</buy>
+                <sell>3.053</sell>
+            </range>
+            <range min-amount="100" max-amount="9999">
+                <buy>3.018</buy>
+                <sell>3.052</sell>
+            </range>
+            <range min-amount="10000" max-amount="999999999999998">
+                <buy>3.019</buy>
+                <sell>3.051</sell>
+            </range>
+        </rate>
+        <rate currency="rub" Units="100">
+            <range min-amount="0" max-amount="9999">
+                <buy>3.29</buy>
+                <sell>3.363</sell>
+            </range>
+            <range min-amount="10000" max-amount="599999">
+                <buy>3.291</buy>
+                <sell>3.362</sell>
+            </range>
+            <range min-amount="600000" max-amount="999999999999998">
+                <buy>3.292</buy>
+                <sell>3.361</sell>
+            </range>
+        </rate>
+    </branch>
+    <branch name="Витебская областная дирекция">
+        <rate currency="usd" Units="1">
+            <range min-amount="0" max-amount="99">
+                <buy>2.552</buy>
+                <sell>2.593</sell>
+            </range>
+            <range min-amount="100" max-amount="9999">
+                <buy>2.553</buy>
+                <sell>2.592</sell>
+            </range>
+            <range min-amount="10000" max-amount="999999999999998">
+                <buy>2.554</buy>
+                <sell>2.591</sell>
+            </range>
+        </rate>
+        <rate currency="eur" Units="1">
+            <range min-amount="0" max-amount="99">
+                <buy>3.017</buy>
+                <sell>3.053</sell>
+            </range>
+            <range min-amount="100" max-amount="9999">
+                <buy>3.018</buy>
+                <sell>3.052</sell>
+            </range>
+            <range min-amount="10000" max-amount="999999999999998">
+                <buy>3.019</buy>
+                <sell>3.051</sell>
+            </range>
+        </rate>
+        <rate currency="rub" Units="100">
+            <range min-amount="0" max-amount="9999">
+                <buy>3.29</buy>
+                <sell>3.363</sell>
+            </range>
+            <range min-amount="10000" max-amount="599999">
+                <buy>3.291</buy>
+                <sell>3.362</sell>
+            </range>
+            <range min-amount="600000" max-amount="999999999999998">
+                <buy>3.292</buy>
+                <sell>3.361</sell>
+            </range>
+        </rate>
+    </branch>
+    <branch name="Гродненская областная дирекция">
+        <rate currency="usd" Units="1">
+            <range min-amount="0" max-amount="99">
+                <buy>2.552</buy>
+                <sell>2.593</sell>
+            </range>
+            <range min-amount="100" max-amount="9999">
+                <buy>2.553</buy>
+                <sell>2.592</sell>
+            </range>
+            <range min-amount="10000" max-amount="999999999999998">
+                <buy>2.554</buy>
+                <sell>2.591</sell>
+            </range>
+        </rate>
+        <rate currency="eur" Units="1">
+            <range min-amount="0" max-amount="99">
+                <buy>3.017</buy>
+                <sell>3.053</sell>
+            </range>
+            <range min-amount="100" max-amount="9999">
+                <buy>3.018</buy>
+                <sell>3.052</sell>
+            </range>
+            <range min-amount="10000" max-amount="999999999999998">
+                <buy>3.019</buy>
+                <sell>3.051</sell>
+            </range>
+        </rate>
+        <rate currency="rub" Units="100">
+            <range min-amount="0" max-amount="9999">
+                <buy>3.29</buy>
+                <sell>3.363</sell>
+            </range>
+            <range min-amount="10000" max-amount="599999">
+                <buy>3.291</buy>
+                <sell>3.362</sell>
+            </range>
+            <range min-amount="600000" max-amount="999999999999998">
+                <buy>3.292</buy>
+                <sell>3.361</sell>
+            </range>
+        </rate>
+    </branch>
+    <branch name="Могилевская областная дирекция">
+        <rate currency="usd" Units="1">
+            <range min-amount="0" max-amount="99">
+                <buy>2.552</buy>
+                <sell>2.593</sell>
+            </range>
+            <range min-amount="100" max-amount="9999">
+                <buy>2.553</buy>
+                <sell>2.592</sell>
+            </range>
+            <range min-amount="10000" max-amount="999999999999998">
+                <buy>2.554</buy>
+                <sell>2.591</sell>
+            </range>
+        </rate>
+        <rate currency="eur" Units="1">
+            <range min-amount="0" max-amount="99">
+                <buy>3.017</buy>
+                <sell>3.053</sell>
+            </range>
+            <range min-amount="100" max-amount="9999">
+                <buy>3.018</buy>
+                <sell>3.052</sell>
+            </range>
+            <range min-amount="10000" max-amount="999999999999998">
+                <buy>3.019</buy>
+                <sell>3.051</sell>
+            </range>
+        </rate>
+        <rate currency="rub" Units="100">
+            <range min-amount="0" max-amount="9999">
+                <buy>3.29</buy>
+                <sell>3.363</sell>
+            </range>
+            <range min-amount="10000" max-amount="599999">
+                <buy>3.291</buy>
+                <sell>3.362</sell>
+            </range>
+            <range min-amount="600000" max-amount="999999999999998">
+                <buy>3.292</buy>
+                <sell>3.361</sell>
+            </range>
+        </rate>
+    </branch>
+    <branch name="Гомельская областная дирекция">
+        <rate currency="usd" Units="1">
+            <range min-amount="0" max-amount="99">
+                <buy>2.552</buy>
+                <sell>2.593</sell>
+            </range>
+            <range min-amount="100" max-amount="9999">
+                <buy>2.553</buy>
+                <sell>2.592</sell>
+            </range>
+            <range min-amount="10000" max-amount="999999999999998">
+                <buy>2.554</buy>
+                <sell>2.591</sell>
+            </range>
+        </rate>
+        <rate currency="eur" Units="1">
+            <range min-amount="0" max-amount="99">
+                <buy>3.017</buy>
+                <sell>3.053</sell>
+            </range>
+            <range min-amount="100" max-amount="9999">
+                <buy>3.018</buy>
+                <sell>3.052</sell>
+            </range>
+            <range min-amount="10000" max-amount="999999999999998">
+                <buy>3.019</buy>
+                <sell>3.051</sell>
+            </range>
+        </rate>
+        <rate currency="rub" Units="100">
+            <range min-amount="0" max-amount="9999">
+                <buy>3.29</buy>
+                <sell>3.363</sell>
+            </range>
+            <range min-amount="10000" max-amount="599999">
+                <buy>3.291</buy>
+                <sell>3.362</sell>
+            </range>
+            <range min-amount="600000" max-amount="999999999999998">
+                <buy>3.292</buy>
+                <sell>3.361</sell>
+            </range>
+        </rate>
+    </branch>
+</branches>
