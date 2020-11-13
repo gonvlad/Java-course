@@ -36,7 +36,6 @@ public class CalculatorThread extends Thread {
 
     @Override
     public void run() {
-        String threadName = Thread.currentThread().getName();
         boolean b = true;
         if (startRangeValue == 1) {
             startRangeValue = 2;

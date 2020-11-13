@@ -36,6 +36,7 @@ public class Runner {
                     System.out.print("\nEnter operation type as sign (+, -, *, /): ");
                     operationType = scanner.next().charAt(0);
                     System.out.println(">>> Operation type saved.");
+                    break;
                 case 4:
                     if (numberOfThreads > 0 && maxRangeValue > 1 && checkOperationType(operationType)) {
                         ThreadGenerator calculator = new ThreadGenerator(numberOfThreads, maxRangeValue, operationType);
@@ -59,14 +60,17 @@ public class Runner {
     }
 
     public static String getMenu(int numberOfThreads, int maxRangeValue, char operationType) {
+        final String NOT_SET = "(Not set)";
+        final String SETTED = "(Setted: ";
+
         return "\n\tUSER MENU\n" +
                 "------------------------------------\n" +
                 "1. Enter number of threads " +
-                    (numberOfThreads == 0 ? "(Not set)" : "(Setted: " + numberOfThreads + ")")  + "\n" +
+                    (numberOfThreads == 0 ? NOT_SET : SETTED + numberOfThreads + ")")  + "\n" +
                 "2. Enter right range value " +
-                    (maxRangeValue == 0 ? "(Not set)" : "(Setted: " + maxRangeValue + ")")  + "\n" +
+                    (maxRangeValue == 0 ? NOT_SET : SETTED + maxRangeValue + ")")  + "\n" +
                 "3. Enter operation type " +
-                    (checkOperationType(operationType) ? "(Setted: " + operationType + ")" : "(Not set)") + "\n" +
+                    (checkOperationType(operationType) ? SETTED + operationType + ")" : NOT_SET) + "\n" +
                 "4. Evaluate task\n" +
                 "5. Exit program\n";
     }

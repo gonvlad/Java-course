@@ -1,7 +1,7 @@
 package by.gsu.pms;
 
 public class ThreadGenerator {
-    public final int minRangeValue = 1;
+    public static final int MIN_RANGE_VALUE = 1;
 
     private char operationType = '+';
     private int result;
@@ -19,7 +19,7 @@ public class ThreadGenerator {
         int startThreadValue;
         int endThreadValue;
         for (int i = 0; i < numberOfThreads; ++i) {
-            startThreadValue = i * threadVolume + minRangeValue;
+            startThreadValue = i * threadVolume + MIN_RANGE_VALUE;
             endThreadValue =  i * threadVolume + threadVolume;
             if (maxRangeValue - endThreadValue < threadVolume) {
                  endThreadValue += maxRangeValue - endThreadValue;
