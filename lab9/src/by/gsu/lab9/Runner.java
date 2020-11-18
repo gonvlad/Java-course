@@ -15,7 +15,7 @@ public class Runner {
     public static final String URL = "http://api.openweathermap.org/data/2.5/weather?q=Kiev,ua&appid=d46c47eac54879f975bcbe5c18c24353&units=metric";
     public static final String ICON_URL_PATTERN = "http://openweathermap.org/img/w/";
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Gson gson = new Gson();
         Forecast forecast = null;
         try {
