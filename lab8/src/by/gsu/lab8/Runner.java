@@ -8,8 +8,11 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import javax.xml.namespace.QName;
 import javax.xml.parsers.*;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -22,18 +25,25 @@ import org.xml.sax.helpers.DefaultHandler;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
+import javax.xml.stream.XMLEventReader;
+import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.events.EndElement;
+import javax.xml.stream.events.StartElement;
+import javax.xml.stream.events.XMLEvent;
 
 public class Runner {
     public static final String URL = "https://belgazprombank.by/upload/courses.xml";
     private static ArrayList<Bank> banks = new ArrayList<>();
 
-    public static void main(String[] args) throws IOException, SAXException, ParserConfigurationException {
+    public static void main(String[] args) throws IOException, SAXException, ParserConfigurationException, XMLStreamException {
         Scanner scanner = new Scanner(System.in);
         int userMenuChoice;
         boolean isProgramRunning = true;
 
         while (isProgramRunning)
         {
+            showUserMenu();
             System.out.print("\nChoose menu item: ");
             userMenuChoice = scanner.nextInt();
             switch (userMenuChoice) {
@@ -52,6 +62,13 @@ public class Runner {
                     System.out.println("\n>>> SAX parsing ended.");
                     break;
                 case 3:
+                    System.out.println(">>> Starting StAX parsing...");
+                    banks = staxParser("resourсes/markup.xml");
+                    System.out.println(">>> Showing result...");
+                    showResult(banks);
+                    System.out.println("\n>>> StAX parsing ended.");
+                    break;
+                case 4:
                     System.out.println("\n>>> Exiting program...");
                     isProgramRunning = false;
                     break;
@@ -60,6 +77,15 @@ public class Runner {
                     break;
             }
         }
+    }
+
+    public static void showUserMenu() {
+        System.out.println("\n\t\tUSER MENU");
+        System.out.println("------------------------------");
+        System.out.println("1. Execute DOM parser");
+        System.out.println("2. Execute SAX parser");
+        System.out.println("3. Execute StAX parser");
+        System.out.println("4. EXIT program");
     }
 
     public static void showResult(ArrayList<Bank> banks) {
@@ -207,7 +233,6 @@ public class Runner {
                 if (currencyName_t != null && !currencyName_t.isEmpty() && numberOfUnits_t != null && !numberOfUnits_t.isEmpty() && !amountRanges_t.isEmpty()) {
                     currencies_t.add(new Currency(currencyName_t, Integer.parseInt(numberOfUnits_t), amountRanges_t));
                 }
-
                 currencyName_t = null;
                 numberOfUnits_t = null;
                 amountRanges_t = new ArrayList<>();
@@ -221,5 +246,80 @@ public class Runner {
                 currencies_t = new ArrayList<>();
             }
         }
+    }
+
+    public static ArrayList<Bank> staxParser(String filePath) throws FileNotFoundException, XMLStreamException {
+        XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
+        XMLEventReader eventReader = xmlInputFactory.createXMLEventReader(new FileInputStream(filePath));
+
+        ArrayList<Bank> banks_t = new ArrayList<>();
+        ArrayList<Currency> currencies_t = new ArrayList<>();
+        ArrayList<AmountRange> amountRanges_t = new ArrayList<>();
+        String bankName_t = null;
+        String currencyName_t = null;
+        String numberOfUnits_t = null;
+        String minAmount_t = null;
+        String maxAmount_t = null;
+        String buyPrice_t = null;
+        String sellPrice_t = null;
+
+        while (eventReader.hasNext()) {
+            XMLEvent xmlEvent = eventReader.nextEvent();
+
+            if (xmlEvent.isStartElement()) {
+                StartElement startElement = xmlEvent.asStartElement();
+
+                switch (startElement.getName().getLocalPart()) {
+                    case "branch":
+                        bankName_t = startElement.getAttributeByName(new QName("name")).getValue();
+                        break;
+                    case "rate":
+                        currencyName_t = startElement.getAttributeByName(new QName("currency")).getValue();
+                        numberOfUnits_t = startElement.getAttributeByName(new QName("Units")).getValue();
+                        break;
+                    case "range":
+                        minAmount_t = startElement.getAttributeByName(new QName("min-amount")).getValue();
+                        maxAmount_t = startElement.getAttributeByName(new QName("max-amount")).getValue();
+                        break;
+                    case "buy":
+                        xmlEvent = eventReader.nextEvent();
+                        buyPrice_t = xmlEvent.asCharacters().getData();
+                        break;
+                    case "sell":
+                        xmlEvent = eventReader.nextEvent();
+                        sellPrice_t = xmlEvent.asCharacters().getData();
+                        break;
+                }
+            } else if (xmlEvent.isEndElement()) {
+                EndElement endElement = xmlEvent.asEndElement();
+
+                switch (endElement.getName().getLocalPart()) {
+                    case "range":
+                        assert minAmount_t != null;
+                        assert buyPrice_t != null;
+                        assert sellPrice_t != null;
+                        amountRanges_t.add(new AmountRange(Integer.parseInt(minAmount_t), new BigInteger(maxAmount_t), Double.parseDouble(buyPrice_t), Double.parseDouble(sellPrice_t)));
+                        buyPrice_t = null;
+                        sellPrice_t = null;
+                        minAmount_t = null;
+                        maxAmount_t = null;
+                        break;
+                    case "rate":
+                        assert numberOfUnits_t != null;
+                        currencies_t.add(new Currency(currencyName_t, Integer.parseInt(numberOfUnits_t), amountRanges_t));
+                        currencyName_t = null;
+                        numberOfUnits_t = null;
+                        amountRanges_t = new ArrayList<>();
+                        break;
+                    case "branch":
+                        banks_t.add(new Bank(bankName_t, currencies_t));
+                        bankName_t = null;
+                        currencies_t = new ArrayList<>();
+                        break;
+                }
+            }
+        }
+
+        return banks_t;
     }
 }
