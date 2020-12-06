@@ -20,7 +20,7 @@ public class Runner {
         Connection connection = ConnectionHandler.openConnection();
 
         ScriptRunner scriptRunner = new ScriptRunner(connection);
-        Reader reader = new BufferedReader(new FileReader("./resources/INITIAL_CREATE_SCRIPT.html"));
+        Reader reader = new BufferedReader(new FileReader("./resources/INITIAL_CREATE_SCRIPT.sql"));
         scriptRunner.runScript(reader);
 
         if (connection != null) {
