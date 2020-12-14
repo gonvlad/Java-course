@@ -5,6 +5,7 @@ import by.gsu.pms.*;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Runner {
@@ -12,9 +13,10 @@ public class Runner {
         Scanner scanner = new Scanner(System.in);
         int userMenuChoice;
         boolean isProgramRunning = true;
+        Mapper mapper = new Mapper();
+        ArrayList<Object> queryParameters = new ArrayList<>();
 
         Connection connection = ConnectionHandler.openConnection();
-
         if (connection != null) {
             while (isProgramRunning) {
                 showMenu();
@@ -26,15 +28,33 @@ public class Runner {
                         for (AccountingRecord accountingRecord: accountingRecords) {
                             Car car = SelectQueryHandler.selectCarByCarId(accountingRecord.getCarId(), connection);
                             Service service = SelectQueryHandler.selectServiceByServiceId(accountingRecord.getServiceId(), connection);
+                            AccountingRecordDTO accountingRecordDTO = mapper.mapAccountingRecordDTO(accountingRecord, car, service);
                         }
                         break;
                     case 2:
+                        ArrayList<Car> cars = SelectQueryHandler.selectCars(connection);
                         break;
                     case 3:
+                        ArrayList<Service> services = SelectQueryHandler.selectServices(connection);
                         break;
                     case 4:
+                        System.out.print("Enter car id: ");
+                        int carId = scanner.nextInt();
+                        queryParameters.add(carId);
+                        System.out.print("Enter service id: ");
+                        int serviceId = scanner.nextInt();
+                        queryParameters.add(serviceId);
+                        queryParameters.add(new Date());
+                        InsertQueryHandler.insertAccountingRecord(queryParameters, connection);
                         break;
                     case 5:
+                        System.out.print("Enter car brand: ");
+                        String carBrand = scanner.next();
+                        queryParameters.add(carBrand);
+                        System.out.print("Enter car model: ");
+                        String carModel = scanner.next();
+                        queryParameters.add(carModel);
+                        InsertQueryHandler.insertCar(queryParameters, connection);
                         break;
                     case 6:
                         break;
